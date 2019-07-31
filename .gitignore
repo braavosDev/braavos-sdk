@@ -1,0 +1,8 @@
+/.project
+/**/*/.project
+/**/*/target
+/**/*/.settings
+/**/*/.classpath
+/**/*/.idea
+/**/*/.factorypath
+*.DS_Store
