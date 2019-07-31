@@ -3,6 +3,8 @@
 /**/*/target
 /**/*/.settings
 /**/*/.classpath
+/.idea
 /**/*/.idea
 /**/*/.factorypath
 *.DS_Store
+/**/*.iml
