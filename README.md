@@ -37,6 +37,9 @@ public static boolean verifyWithPubKey(String plainText, String signature, Strin
 ```
 
 ### 客户端Client(UnifiedOpenApiClient)
+#### 使用说明
+- 初始化需要设置`appId`（平台发放）、`openApiHost`（平台host）、`privateKey`（机构自己的私钥）
+- 调用 `remoteCall`方法，传入json参数和请求接口path，内部会自动进行签名&header设置，并调用平台接口
 
 #### 使用示例
 ```
@@ -60,8 +63,13 @@ public static boolean verifyWithPubKey(String plainText, String signature, Strin
     }
 ```
 > 详见 com.yqg.braavos.sdk.ExampleApp
+> UnifiedOpenApiClient默认使用OkHttpClient组件，可根据项目情况参照代码使用其他组件
 
-### 前置签名校验（UnifiedSignCheckFilter）
+### 服务器校验 
+#### 使用说明
+- 初始化需要设置`platformPublicKey`(平台的公钥),并注册为 Filter
+- UnifiedSignCheckFilter 会自动校验平台签名是否合法
 
-注册filter 即可前置校验平台调用传递的签名是否合法，需要下载平台公钥
+#### 备注
+若不打算使用filter进行校验，也可以仿照逻辑手动获取 RequestBody，从header中获取签名信息，手动进行签名校验
 
