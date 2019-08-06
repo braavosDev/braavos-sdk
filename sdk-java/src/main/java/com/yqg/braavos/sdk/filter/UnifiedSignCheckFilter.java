@@ -58,6 +58,7 @@ public class UnifiedSignCheckFilter extends OncePerRequestFilter {
         if (checkSign) {
             LOGGER.debug("sign check success");
             filterChain.doFilter(request, response);
+            return;
         }
         LOGGER.error("sign check fail");
         writeToResponse(response, OBJECT_MAPPER.writeValueAsString(new UnifiedResponse(20000, "签名验证失败")));
