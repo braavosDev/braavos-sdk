@@ -103,7 +103,7 @@ public class UnifiedSignCheckFilter extends OncePerRequestFilter {
 
         @Override
         public BufferedReader getReader() throws IOException {
-            return new BufferedReader(new InputStreamReader(this.getInputStream()));
+            return new BufferedReader(new InputStreamReader(this.getInputStream(), "UTF-8"));
         }
 
         @Override
