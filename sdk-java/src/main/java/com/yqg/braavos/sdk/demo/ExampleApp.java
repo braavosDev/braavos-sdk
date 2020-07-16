@@ -1,11 +1,11 @@
-package com.yqg.braavos.sdk;
+package com.yqg.braavos.sdk.demo;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.yqg.braavos.sdk.client.UnifiedOpenApiClient;
 
 /**
- * 本地测试app
+ * Created by pengbo on 2019/7/31 13:24.
  */
 public class ExampleApp {
 
@@ -35,7 +35,6 @@ public class ExampleApp {
         String responseData = openApiClient.remoteCall(jsonData, "/api/sample/hello");
 
         System.out.println("response is : " + responseData);
-
     }
 
 
@@ -55,7 +54,7 @@ public class ExampleApp {
             return sex;
         }
 
-        public Long getBirth_time() {
+        public Long getBirthTime() {
             return birth_time;
         }
     }
